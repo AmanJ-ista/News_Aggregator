@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        .toi {
+            width: 950px;
+            border-style: solid;
+        }
+        .indian_express{
+            border-style: solid;
+            position: absolute;
+            top:109px ;
+            right:1px ;
+
+
+        }
+
+
+       
+    </style>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>News Aggregator</title>
+  </head>
+  <div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="https://timesofindia.indiatimes.com/briefs">Times of India</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="https://www.hindustantimes.com/">Hindustan Times <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://www.thehindu.com/">The Hindu</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="https://indianexpress.com/">Indian Express</a>
+          <a class="dropdown-item" href="https://www.dailypioneer.com/">Pioneer</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="https://www.deccanherald.com/">Deccan Herald</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="http://127.0.0.1:8000/AJ_news/" method="get">
+      <input class="form-control mr-sm-2" type="search" placeholder="Type Email....." aria-label="Type Email" name="email1">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Contact Me</button>
+    </form>
+  </div>
+</nav>
+  <h3 style="padding-left: 20px;padding-top: 10px;">News in brief</h3>
+
+  <div class="toi">
+
+  {% for h,i in combo2.items %}
+
+     <div class="card" style="max-width: 18rem ; display: inline-block; margin: 10px ;border-style: solid; border-width: 10px;">
+  <img src={{i}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">NEWS</h5>
+    <p class="card-text">{{h}}</p>
+
+  </div>
+</div>
+ 
+  {% endfor %}
+   </div>
+
+
+<div class="indian_express">
+    {% for para,imges in combo1.items %}
+<div class="card mb-3" style="max-width: 500px;max-height: 250px ; padding:5px ; margin:10px; border-style: solid; border-width: 10px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src={{ imges }} class="card-img" >
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">{{ para }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+</div>
+
+
+
+
+  
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
